@@ -27,6 +27,10 @@
                                     <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Repeat Password">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control form-control-user" id="role" name="role" placeholder="if you want to be an admin, please request a code on the web admin" value="<?= set_value('role_id') ?>">
+                                <?= form_error('email', ' <small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
                             <button type="submit" class="btn btn-primary btn-user btn-block">
                                 Register Account
                             </button>

@@ -3,6 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Menu extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        is_logged_in();
+    }
     public function index()
     {
         $data['title'] = 'Menu Management';
@@ -89,51 +94,11 @@ class Menu extends CI_Controller
                 'icon' => $this->input->post('icon'),
                 'is_active' => $this->input->post('is_active')
             ];
-            $folder1 = $data['url'];
-            $folder2 = explode('/', $folder1);
-            $folder3 = $folder2[0];
-            $file = ucwords($folder2[0]);
-            $met = ucwords($folder2[1]);
-
-            if (file_exists('application/controllers/' . $file . '.php')) {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                    Submenu Vailed To Added, Please Change The Url !
-                    </div>');
-                redirect('menu/submenu');
-            } else {
-                $this->db->insert('user_sub_menu', $data);
-
-                mkdir('application/views/' . $folder3); // view folder
-
-                fopen('application/views/' . $folder3 . '/' . strtolower($file) . '.php', 'w'); //viesw file
-                $controller_file = fopen('application/controllers/' . $file . '.php', 'w'); //contoller file
-                $file_lowwer = strtolower($file);
-                $n1 = $data['title'] = 'Submenu Management';
-                $n2 = $this->load->view('templates/user_sidebar', $data);
-                $n3 = $this->load->view('templates/user_topbar', $data);
-                $n4 = $this->load->view('templates/user_footer');
-                $isiController = "<?php
-                defined('BASEPATH') or exit('No direct script access allowed');
-                
-                class " . "$file" . " extends CI_Controller
-                {
-                    public function " . "$met" . "()
-                    {" .
-                    $n1 .
-                    $n2 .
-                    $n3 .
-                    "$" . "this->load->" . "view('" . "$folder3" . "/" . "$file_lowwer'" . ");" .
-                    $n4 . "
-                    }
-                };";
-                fwrite($controller_file, $isiController);
-
-
-                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            $this->db->insert('user_sub_menu', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                     Submenu Success Added! 
                     </div>');
-                redirect('menu/submenu');
-            }
+            redirect('menu/submenu');
         }
     }
 
@@ -155,21 +120,9 @@ class Menu extends CI_Controller
         $this->load->helper('file');
         $data['edit'] = $this->db->get('user_menu')->result_array();
         $id = $_GET['id'];
-        $q = $this->db->get_where('user_sub_menu', ['id' => $id])->row_array();
-        $name_File = $q['url'];
-        $q1 = explode('/', $name_File);
-        $result = ucwords($q1[0]);
 
-        if (file_exists($d_f = 'application/controllers/' . $result . '.php')) {
-            $del = unlink($d_f);
-            if ($del) {
-                $d_v_f = 'application/views/' . strtolower($result) . '/' . strtolower($result)  . '.php';
-                $del = unlink($d_v_f);
-                $d_v_fi = 'application/views/' . strtolower($result);
-                $del = rmdir($d_v_fi);
-                $this->db->delete('user_sub_menu', array('id' => $id));
-            }
-        }
+        $this->db->delete('user_sub_menu', array('id' => $id));
+
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
             Submenu Success Removed!
             </div>');
