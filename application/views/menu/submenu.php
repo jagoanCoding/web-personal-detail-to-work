@@ -50,7 +50,7 @@
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('menu/edit?id=' . $sm['id']); ?>" class="badge badge-info">Edit</a>
+                                <a href="<?= base_url('menu/editsubmenu?id=' . $sm['id']); ?>" class="badge badge-info">Edit</a>
                                 <a href="<?= base_url('menu/deleteSubMenu?id=' . $sm['id']) . '?file='; ?>" class="badge badge-danger">Delete</a>
                             </td>
                         </tr>
