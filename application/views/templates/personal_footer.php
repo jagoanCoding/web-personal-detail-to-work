@@ -7,18 +7,14 @@
                         <div class="col-md-6 col-lg-10 col-xl-3">
                             <div class="inset-xl-right-20" style="max-width: 510px;"><a class="brand" href="index.html"><img src="" alt="" width="143" height="28" /></a>
                                 <p>
-                                    If you or your business is facing a legal
-                                    challenge that calls for sound advice and skilled representation, contact us today to arrange a
-                                    free consultation with an attorney.
+                                    Penulis adalah seorang developer website, front-end juga back-end, Penulis sangat membutuhkan pengalaman untuk meningkatkan kemampuanya.
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4 col-xl-3">
                             <div class="inset-xl-right-20" style="max-width: 510px;"><a class="brand" href="index.html"><img src="" alt="" width="143" height="28" /></a>
                                 <p>
-                                    If you or your business is facing a legal
-                                    challenge that calls for sound advice and skilled representation, contact us today to arrange a
-                                    free consultation with an attorney.
+                                    penyedia pasang iklan.
                                 </p>
                             </div>
                         </div>
@@ -27,10 +23,10 @@
                             <div class="row" style="max-width: 270px;">
                                 <div class="col-6">
                                     <ul>
-                                        <li><a href="<?= base_url(); ?>">> Utama</a></li>
-                                        <li><a href="">> Riwayat Hidup</a></li>
-                                        <li><a href="">> Hasil Karya</a></li>
-                                        <li><a href="">> Kontak</a></li>
+                                        <li><a href="<?= base_url(); ?>">&#8259; Utama</a></li>
+                                        <li><a href="<?= base_url('personal/riwayathidup'); ?>">&#8259; Riwayat Hidup</a></li>
+                                        <li><a href="<?= base_url('personal/hasilkarya'); ?>">&#8259; Hasil Karya</a></li>
+                                        <li><a href="<?= base_url('personal/kontak'); ?>">&#8259; Kontak</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -63,19 +59,10 @@
         <div class="container text-center">
             <div class="row row-15 flex-md-row-reverse justify-content-md-between align-items-md-center">
                 <div class="col-md-6 text-md-right">
-                    <div class="group-sm group-middle">
-                        <p class="font-italic text-white">Follow Us:</p>
-                        <ul class="list-inline list-inline-reset">
-                            <li><a class="novi-icon icon icon-circle icon-bright-gray-filled icon-xxs-smaller fa fa-facebook" href="#"></a></li>
-                            <li><a class="novi-icon icon icon-circle icon-bright-gray-filled icon-xxs-smaller fa fa-twitter" href="#"></a></li>
-                            <li><a class="novi-icon icon icon-circle icon-bright-gray-filled icon-xxs-smaller fa fa-google-plus" href="#"></a></li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="col-md-6 text-md-left">
                     <div class="container">
-                        <small>Copyright &copy; <?= date('Y'); ?> 2020 | Build With <i class="fas fa-fw fa-heart"></i> by Markhan
-                            Prasetiyo.</small>
+                        <small>Copyright &copy; <?= date('Y'); ?> 2020 by mprassDevelop.</small>
                     </div>
                 </div>
             </div>

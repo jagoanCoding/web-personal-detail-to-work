@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <link rel="icon" href="<?= base_url('assets/'); ?>/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic%7CLato:300,300italic,400,400italic,700,900%7CMerriweather:700italic">
     <link href="<?= base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/fonts.css">
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/bootstrap.css">
@@ -76,7 +75,7 @@
                             <div class="rd-navbar-nav-wrap">
                                 <div class="rd-navbar-nav-inner">
                                     <ul class="rd-navbar-nav">
-                                        <li class="active"><a href="<?= base_url(); ?>">Utama</a>
+                                        <li><a href="<?= base_url(); ?>">Utama</a>
                                         </li>
                                         <li><a href="<?= base_url('personal/riwayathidup'); ?>">Riwayat Hidup</a>
                                         </li>

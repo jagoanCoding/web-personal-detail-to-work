@@ -31,4 +31,11 @@ class Personal extends CI_Controller
         $this->load->view('personal/kontak');
         $this->load->view('templates/personal_footer');
     }
+    public function lamaran()
+    {
+        $data['title'] = 'Surat Lamaran Pekerjaan';
+        $this->load->view('templates/personal_header', $data);
+        $this->load->view('personal/lamaran');
+        $this->load->view('templates/personal_footer');
+    }
 }
